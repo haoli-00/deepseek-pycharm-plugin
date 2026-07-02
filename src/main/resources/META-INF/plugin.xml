@@ -60,7 +60,7 @@
             text="Send to DeepSeek"
             description="Send selected code to DeepSeek chat"
             icon="/icons/deepseek.svg">
-            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="EditorCopy"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
         </action>
     </actions>
 </idea-plugin>
