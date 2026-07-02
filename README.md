@@ -16,7 +16,7 @@
 ## 界面截图 (Screenshot)
 
 ![项目视图](img/项目视图1.png)
-
+![代码右击直接发给deepseek](img/代码右击直接发给deepseek.png)
 ---
 
 ## 安装 (Installation)
