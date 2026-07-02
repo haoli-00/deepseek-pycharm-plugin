@@ -1,0 +1,66 @@
+<idea-plugin>
+    <id>com.github.deepseekpycharm.deepseek-pycharm-plugin</id>
+    <name>DeepSeek for PyCharm</name>
+    <version>${pluginVersion}</version>
+    <vendor>haoli-00</vendor>
+
+    <description><![CDATA[
+    <h2>DeepSeek for PyCharm</h2>
+    <p>
+        Bring <a href="https://chat.deepseek.com">DeepSeek AI</a> directly into your PyCharm IDE.
+        No API key required 鈥?the plugin embeds a browser panel that loads the official DeepSeek
+        web interface.  Simply log in once and start chatting.
+    </p>
+    <h3>Features</h3>
+    <ul>
+        <li>Embedded DeepSeek chat panel in the IDE tool window</li>
+        <li>Send selected code to DeepSeek via right-click context menu</li>
+        <li>Automatic light/dark theme sync (follows PyCharm theme)</li>
+    </ul>
+    <h3>Usage</h3>
+    <ol>
+        <li>Open <b>View 鈫?Tool Windows 鈫?DeepSeek</b></li>
+        <li>Log in to your DeepSeek account in the embedded browser</li>
+        <li>Select code in the editor, right-click, and choose <b>Send to DeepSeek</b></li>
+    </ol>
+    ]]></description>
+
+    <change-notes><![CDATA[
+    <b>1.0.0</b><br>
+    Initial release:<br>
+    <ul>
+        <li>Embedded DeepSeek web interface in a tool window</li>
+        <li>Send selected code to DeepSeek via context menu</li>
+        <li>Automatic theme synchronization</li>
+    </ul>
+    ]]></change-notes>
+
+    <vendor email="" url="https://github.com/haoli-00/deepseek-pycharm-plugin">
+        haoli-00
+    </vendor>
+
+    <!-- Compatibility: PyCharm 2023.2+ (build 232) through 2025.2+ (build 252) -->
+    <idea-version since-build="${pluginSinceBuild}" until-build="${pluginUntilBuild}"/>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends optional="true" config-file="python-integration.xml">com.intellij.modules.python</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+            id="DeepSeek"
+            anchor="right"
+            icon="/icons/deepseek.svg"
+            factoryClass="com.github.deepseekpycharm.DeepSeekToolWindowFactory"
+            canCloseContents="true"/>
+    </extensions>
+
+    <actions>
+        <action
+            id="DeepSeek.SendToDeepSeek"
+            class="com.github.deepseekpycharm.actions.SendToDeepSeekAction"
+            text="Send to DeepSeek"
+            description="Send selected code to DeepSeek chat">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="CompareClipboard"/>
+        </action>
+    </actions>
+</idea-plugin>

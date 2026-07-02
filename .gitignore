@@ -1,0 +1,13 @@
+*.iml
+.gradle
+/build/
+/local.properties
+.idea/
+*.user
+*.ipr
+*.iws
+.intellijPlatform
+/out/
+/dist/
+.DS_Store
+Thumbs.db
