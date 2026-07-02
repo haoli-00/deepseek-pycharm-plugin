@@ -26,6 +26,12 @@
     ]]></description>
 
     <change-notes><![CDATA[
+    <b>1.0.3</b><br>
+    Bug fixes:<br>
+    <ul>
+        <li>Fix icon path resolution: remove leading slash for correct resource loading</li>
+        <li>Fix canCloseContents behavior to prevent empty panel on tab close</li>
+    </ul>
     <b>1.0.0</b><br>
     Initial release:<br>
     <ul>
@@ -39,7 +45,7 @@
         haoli-00
     </vendor>
 
-    <!-- Compatibility: PyCharm 2023.2+ (build 232) through 2025.2+ (build 252) -->
+    <!-- Compatibility: PyCharm 2023.2+ (build 232) through 2025.2+ (build 261) -->
     <idea-version since-build="${pluginSinceBuild}" until-build="${pluginUntilBuild}"/>
 
     <depends>com.intellij.modules.platform</depends>
@@ -49,7 +55,7 @@
         <toolWindow
             id="DeepSeek"
             anchor="right"
-            icon="icons/deepseek.svg"
+            icon="/icons/deepseek.svg"
             factoryClass="com.github.deepseekpycharm.DeepSeekToolWindowFactory"/>
     </extensions>
 
@@ -59,7 +65,7 @@
             class="com.github.deepseekpycharm.actions.SendToDeepSeekAction"
             text="Send to DeepSeek"
             description="Send selected code to DeepSeek chat"
-            icon="icons/deepseek.svg">
+            icon="/icons/deepseek.svg">
             <add-to-group group-id="EditorPopupMenu" anchor="first" />
         </action>
     </actions>
