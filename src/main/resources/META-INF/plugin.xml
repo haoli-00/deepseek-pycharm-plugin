@@ -50,8 +50,7 @@
             id="DeepSeek"
             anchor="right"
             icon="/icons/deepseek.svg"
-            factoryClass="com.github.deepseekpycharm.DeepSeekToolWindowFactory"
-            canCloseContents="true"/>
+            factoryClass="com.github.deepseekpycharm.DeepSeekToolWindowFactory"/>
     </extensions>
 
     <actions>
